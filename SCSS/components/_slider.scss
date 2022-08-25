@@ -1,0 +1,50 @@
+.header {
+    &__sliderContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 17rem;
+    }
+
+    &--annually, &--monthly {
+        color: $selected-card-font-clr;
+    }
+}
+
+
+input[type="checkbox"].header--toggle {
+    visibility: hidden;
+    position: absolute;
+    left: -900rem;
+}
+
+input[type="checkbox"].header--toggle + label {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+input[type="checkbox"].header--toggle + label::before {
+    content: " ";
+    width: 4rem;
+    height: 2rem;
+    background-image: $primary-gradient;
+    border-radius: 6.6rem;
+    transition: all 200ms ease-in-out;
+}
+
+input[type="checkbox"].header--toggle + label::after {
+    content: " ";
+    width: 1.8rem;
+    height: 1.8rem;
+    background-color: white;
+    border-radius: 6.6rem;
+    position: absolute;
+    left: .1rem;
+    transition: all 300ms ease-in-out;
+}
+
+input[type="checkbox"].header--toggle:checked + label:after {
+    transform: translateX(2rem);
+}
