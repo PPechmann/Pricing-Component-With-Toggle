@@ -1,31 +1,34 @@
-.header {
-    &__sliderContainer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 17rem;
-    }
 
-    &--annually, &--monthly {
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 17rem;
+
+    &__annually, &__monthly {
         color: $selected-card-font-clr;
     }
 }
 
-
-input[type="checkbox"].header--toggle {
+input[type="checkbox"].slider__toggle {
     visibility: hidden;
     position: absolute;
     left: -900rem;
 }
 
-input[type="checkbox"].header--toggle + label {
+input[type="checkbox"].slider__toggle + label {
     display: flex;
     align-items: center;
     position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 
-input[type="checkbox"].header--toggle + label::before {
+input[type="checkbox"].slider__toggle + label::before {
     content: " ";
     width: 4rem;
     height: 2rem;
@@ -34,7 +37,7 @@ input[type="checkbox"].header--toggle + label::before {
     transition: all 200ms ease-in-out;
 }
 
-input[type="checkbox"].header--toggle + label::after {
+input[type="checkbox"].slider__toggle + label::after {
     content: " ";
     width: 1.8rem;
     height: 1.8rem;
@@ -45,6 +48,6 @@ input[type="checkbox"].header--toggle + label::after {
     transition: all 300ms ease-in-out;
 }
 
-input[type="checkbox"].header--toggle:checked + label:after {
+input[type="checkbox"].slider__toggle:checked + label:after {
     transform: translateX(2rem);
 }

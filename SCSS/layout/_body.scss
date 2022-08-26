@@ -5,3 +5,19 @@ body {
     min-height: 100vh;
     padding: 5rem 0rem 3rem 0rem;
 }
+
+@media only screen and (max-width: 800px) {
+    body {
+        background-size: 30rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    
+    body{
+        background-position: 400% 0%, 1000% 1000%;
+    }
+    
+}
+
+

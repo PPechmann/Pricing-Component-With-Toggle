@@ -4,6 +4,8 @@
     align-content: space-between;
 }
 
+
+
 .card {
     display: flex;
     align-items: center;
@@ -50,7 +52,7 @@
         list-style-type: none;
         padding: 0;
 
-        &--items {
+        &Items {
             border-top: 1px solid $selected-card-font-clr;
             padding: 1rem 0rem;
             font-size: 1rem;
@@ -62,6 +64,23 @@
             }
         }
     }
-    
-    
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 25rem;
+        height: 30rem;
+
+        &__2 {
+            height: 30rem;
+            width: 25rem;
+            position: static;
+            margin: 2.5rem 0rem;
+        }
+    }
 }

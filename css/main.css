@@ -47,40 +47,59 @@
   list-style-type: none;
   padding: 0;
 }
-.card__list--items {
+.card__listItems {
   border-top: 1px solid hsl(234deg, 14%, 74%);
   padding: 1rem 0rem;
   font-size: 1rem;
   width: 18rem;
 }
-.card__list--items:last-child {
+.card__listItems:last-child {
   border-bottom: 1px solid hsl(234deg, 14%, 74%);
   margin-bottom: 1.5rem;
 }
 
-.header__sliderContainer {
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 25rem;
+    height: 30rem;
+  }
+  .card__2 {
+    height: 30rem;
+    width: 25rem;
+    position: static;
+    margin: 2.5rem 0rem;
+  }
+}
+.slider {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 17rem;
 }
-.header--annually, .header--monthly {
+.slider__annually, .slider__monthly {
   color: hsl(234deg, 14%, 74%);
 }
 
-input[type=checkbox].header--toggle {
+input[type=checkbox].slider__toggle {
   visibility: hidden;
   position: absolute;
   left: -900rem;
 }
 
-input[type=checkbox].header--toggle + label {
+input[type=checkbox].slider__toggle + label {
   display: flex;
   align-items: center;
   position: relative;
 }
+input[type=checkbox].slider__toggle + label:hover {
+  cursor: pointer;
+}
 
-input[type=checkbox].header--toggle + label::before {
+input[type=checkbox].slider__toggle + label::before {
   content: " ";
   width: 4rem;
   height: 2rem;
@@ -89,7 +108,7 @@ input[type=checkbox].header--toggle + label::before {
   transition: all 200ms ease-in-out;
 }
 
-input[type=checkbox].header--toggle + label::after {
+input[type=checkbox].slider__toggle + label::after {
   content: " ";
   width: 1.8rem;
   height: 1.8rem;
@@ -100,11 +119,11 @@ input[type=checkbox].header--toggle + label::after {
   transition: all 300ms ease-in-out;
 }
 
-input[type=checkbox].header--toggle:checked + label:after {
+input[type=checkbox].slider__toggle:checked + label:after {
   transform: translateX(2rem);
 }
 
-.card__learnMoreBtn {
+.card__btn {
   border: none;
   border-radius: 3px;
   text-transform: uppercase;
@@ -113,14 +132,13 @@ input[type=checkbox].header--toggle:checked + label:after {
   background-image: linear-gradient(to right, hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
   color: white;
 }
-
-.card__learnMoreMiddleBtn {
+.card__btn--white {
   position: relative;
   background-image: linear-gradient(to right, hsl(236deg, 72%, 79%), hsl(237deg, 63%, 64%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.card__learnMoreMiddleBtn:after {
+.card__btn--white:after {
   content: "";
   position: absolute;
   top: 0;
@@ -224,6 +242,21 @@ html {
     font-size: 12px;
   }
 }
+@media only screen and (max-width: 870px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 11px;
+  }
+}
 body {
   background-image: url(../../images/bg-top.svg), url(../../images/bg-bottom.svg);
   background-position: 100% 0%, 0% 100%;
@@ -232,6 +265,16 @@ body {
   padding: 5rem 0rem 3rem 0rem;
 }
 
+@media only screen and (max-width: 800px) {
+  body {
+    background-size: 30rem;
+  }
+}
+@media only screen and (max-width: 375px) {
+  body {
+    background-position: 400% 0%, 1000% 1000%;
+  }
+}
 .header {
   display: flex;
   flex-direction: column;
